@@ -28,13 +28,13 @@ export class WhenMock {
             this.log(`   matcher: ${matcher}`);
             this.log(`   arg: ${arg}`);
 
-            // Assert the match for better messaging during a failure
-            if (assertCall) {
-              expect(arg).toEqual(matcher);
-            }
-
             return equals(arg, matcher);
           }, true);
+
+          // Assert the match for better messaging during a failure
+          if (assertCall) {
+            expect(this.fn).toBeCalledWith(...matchers);
+          }
 
           if (match) {
             return val;
