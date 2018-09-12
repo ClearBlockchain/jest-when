@@ -15,7 +15,8 @@
   "private": false,
   "scripts": {
     "test": "jest",
-    "build": "rm -rf dist && mkdir dist && babel when.js --out-file dist/when.js"
+    "build": "rm -rf dist && mkdir dist && babel when.js --out-file dist/when.js",
+    "postinstall": "npm run build"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
